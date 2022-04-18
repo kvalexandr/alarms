@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="alarms-count">
+        <a [class.alarm-all]="alarmCount > 0" [routerLink]="['/alarms']">
+          Аварии: {{alarmCount}}
+        </a>
+      </div>
+      <div class="alarms-list">
+        <a [routerLink]="['/history']">Список аварий</a>
+      </div>
+      <div class="alarms-generate">
+        <button (click)="generateAlarm()">Генерировать аварию</button>
+      </div>
+    </div>
+  </div>
+</header>

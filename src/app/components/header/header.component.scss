@@ -1,0 +1,34 @@
+.header {
+  background: #508750;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 13px 0;
+
+    div {
+      margin-right: 30px;
+    }
+  }
+
+  .alarm-all {
+    animation: blink 2s linear infinite;
+    font-weight: bold;
+    color: #8a2c2c;
+  }
+
+  @keyframes blink {
+    0% {
+      color: #8a2c2c;
+    }
+    50% {
+      color: #ffffff;
+    }
+    100% {
+      color: #8a2c2c;
+    }
+  }
+}
+

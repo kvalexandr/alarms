@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>История аварий</h1>
+  <input type="text" #search class="search" placeholder="фильтр страницы">
+
+  <div class="alarms" *ngIf="alarmsList.length > 0; else noalarms">
+    <div class="header">
+      <div class="col col-10">Тип</div>
+      <div class="col col-10">Устройство</div>
+      <div class="col col-10">Время</div>
+      <div class="col col-10">Место</div>
+      <div class="col col-10">Параметр</div>
+      <div class="col col-10">Значение</div>
+      <div class="col col-20">Причина</div>
+      <div class="col col-10">Квитирование</div>
+      <div class="col col-10">Закончилось</div>
+    </div>
+    <div class="row" *ngFor="let alarm of alarmsList">
+      <div class="col col-10">{{alarm.type}}</div>
+      <div class="col col-10">{{alarm.device}}</div>
+      <div class="col col-10">{{alarm.time_start | date:'dd.MM.y hh:mm:ss'}}</div>
+      <div class="col col-10">{{alarm.place}}</div>
+      <div class="col col-10">{{alarm.parameter}}</div>
+      <div class="col col-10">{{alarm.value}}</div>
+      <div class="col col-20">{{alarm.reason}}</div>
+      <div class="col col-10">{{alarm.time_confirm | date:'dd.MM.y hh:mm:ss'}}</div>
+      <div class="col col-10">{{alarm.time_end | date:'dd.MM.y hh:mm:ss'}}</div>
+    </div>
+  </div>
+
+  <ng-template #noalarms>Нет аварий</ng-template>
+</div>
